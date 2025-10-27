@@ -3,160 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title id="title">Ladan Works — Projects & Skills</title>
-  <meta name="description" content="Two flagship projects by Ladan: SmartBike AI and the book ‘Fritz – Mein Roboterfreund’. Arduino & Computer Vision skills." />
+  <title id="pageTitle">Ladan Works — Projects & Skills</title>
+  <meta name="description" content="SmartBike AI and the book ‘Fritz – Mein Roboterfreund’. Arduino & Computer Vision." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body{scroll-behavior:smooth}</style>
+  <style>
+    :root{ --brand:#0ea5e9; --bg1:#0ea5e9; --bg2:#7c3aed; }
+    body{scroll-behavior:smooth}
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b">
-    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#projects" class="font-bold text-xl" id="brand">Ladan Works</a>
-      <div class="flex items-center gap-3">
-        <a href="#projects" class="hover:opacity-70" id="navProjects">Projects</a>
-        <a href="#skills" class="hover:opacity-70" id="navSkills">Skills</a>
-        <select id="lang" class="px-3 py-2 rounded-xl border">
-          <option value="en" selected>EN</option>
-          <option value="de">DE</option>
-        </select>
+<body class="text-slate-900 bg-slate-50">
+  <!-- Gradient header -->
+  <div class="bg-gradient-to-r from-[var(--bg1)] to-[var(--bg2)] text-white">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex items-center justify-between">
+        <h1 id="brand" class="text-2xl md:text-3xl font-extrabold">Ladan Works</h1>
+        <div class="flex items-center gap-3">
+          <a href="#projects" class="opacity-90 hover:opacity-100" id="navProjects">Projects</a>
+          <a href="#skills" class="opacity-90 hover:opacity-100" id="navSkills">Skills</a>
+          <select id="lang" class="px-3 py-2 rounded-xl text-slate-900">
+            <option value="en" selected>EN</option>
+            <option value="de">DE</option>
+          </select>
+        </div>
       </div>
-    </nav>
-  </header>
+      <p id="tagline" class="mt-4 opacity-90">Engineering, AI & practical tools.</p>
+    </div>
+  </div>
 
-  <main class="max-w-5xl mx-auto px-4">
+  <main class="max-w-6xl mx-auto px-4">
     <!-- Projects -->
     <section id="projects" class="py-12">
-      <h1 class="text-3xl font-extrabold mb-6" id="projectsTitle"></h1>
+      <h2 id="projectsTitle" class="text-3xl font-bold mb-6">Featured Projects</h2>
       <div id="projectsGrid" class="grid md:grid-cols-2 gap-6"></div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="py-12">
-      <h2 class="text-2xl font-bold mb-6" id="skillsTitle"></h2>
+      <h2 id="skillsTitle" class="text-3xl font-bold mb-6">Core Skills</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl bg-white border">
-          <h3 class="font-semibold mb-1">Arduino / Embedded</h3>
-          <p class="opacity-80 text-sm" id="sk1"></p>
+        <div class="p-6 rounded-2xl bg-white border shadow-sm">
+          <h3 class="font-semibold mb-2">Arduino / Embedded</h3>
+          <p id="skillArduino" class="opacity-80 text-sm"></p>
         </div>
-        <div class="p-6 rounded-2xl bg-white border">
-          <h3 class="font-semibold mb-1">Computer Vision (CV)</h3>
-          <p class="opacity-80 text-sm" id="sk2"></p>
+        <div class="p-6 rounded-2xl bg-white border shadow-sm">
+          <h3 class="font-semibold mb-2">Computer Vision</h3>
+          <p id="skillCV" class="opacity-80 text-sm"></p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-8 text-center opacity-70 border-t">
-    <p id="footerTxt"></p>
+  <footer class="py-10 text-center opacity-70 border-t">
+    <p id="footerTxt">© 2025 Ladan — All rights reserved.</p>
   </footer>
 
   <script>
-    // book cover in your repo (uploaded as book.jpg)
-    const bookImageUrl = "book.jpg";
-    const amazonUrl = "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746?dplnkId=c1ecb555-3be3-4cb7-90a3-d95771b93a21&nodl=1";
-
-    const i18n = {
-      en: {
-        brand: "Ladan Works",
-        navProjects: "Projects",
-        navSkills: "Skills",
-        projectsTitle: "Featured Projects",
-        skillsTitle: "Core Skills",
-        sk1: "Rapid prototyping with Arduino/ESP, sensors, OLEDs, LDR/IR, serial I/O, and hardware testing.",
-        sk2: "Real-time detection, object tracking, safety alerts; Python pipelines and on-device optimization.",
-        footerTxt: "© 2025 Ladan — All rights reserved.",
-        projects: [
-          {
-            title: "SmartBike AI",
-            desc: "Intelligent helmet concept with integrated AI reacting to hazards in real time and issuing audio warnings. With a camera, a compact processor (Nano-PC or Jetson Nano) and modern CV (YOLOv8, MediaPipe), it detects vehicles, motorcycles or obstacles and warns based on position and speed. For cyclists, motorcyclists, wheelchair users and people with limited mobility.",
-            url: "#"
-          },
-          {
-            title: "Fritz – My Robot Friend",
-            desc: "Children’s book by Ladan Seddighi about friendship, curiosity and robotics. Short, engaging text with playful illustrations—sparks creative thinking.",
-            url: amazonUrl,
-            cardExtra: `
-              <img src="${bookImageUrl}" alt="Fritz – Mein Roboterfreund book cover" class="w-full h-48 object-cover rounded-xl border mb-3">
-              <a class="inline-block px-4 py-2 rounded-xl bg-sky-500 text-white" href="${amazonUrl}" target="_blank" rel="noopener">View on Amazon</a>
-            `
-          }
-        ]
-      },
-      de: {
-        brand: "Ladan Works",
-        navProjects: "Projekte",
-        navSkills: "Fähigkeiten",
-        projectsTitle: "Ausgewählte Projekte",
-        skillsTitle: "Kernkompetenzen",
-        sk1: "Schnelles Prototyping mit Arduino/ESP, Sensoren, OLEDs, LDR/IR, serieller I/O und Hardware-Tests.",
-        sk2: "Echtzeit-Erkennung, Objektverfolgung, Sicherheitswarnungen; Python-Pipelines und On-Device-Optimierung.",
-        footerTxt: "© 2025 Ladan — Alle Rechte vorbehalten.",
-        projects: [
-          {
-            title: "SmartBike KI",
-            desc: "Idee: ein intelligenter Fahrradhelm mit integrierter KI, der in Echtzeit auf potenzielle Gefahren reagiert und sofort akustische Warnungen ausgibt. Mithilfe einer Kamera, einem kompakten Prozessor (z. B. Nano-PC oder Jetson Nano) und moderner Computer-Vision (z. B. YOLOv8, MediaPipe) erkennt der Helm Fahrzeuge, Motorräder oder Hindernisse und warnt je nach Position und Geschwindigkeit. Zielgruppen: Radfahrerinnen, Motorradfahrerinnen, Rollstuhlnutzende und Personen mit eingeschränkter Mobilität.",
-            url: "#"
-          },
-          {
-            title: "Fritz – Mein Roboterfreund",
-            desc: "Kinderbuch von Ladan Seddighi über Freundschaft, Neugier und Robotik. Kurze, eingängige Texte mit spielerischen Illustrationen – fördert kreatives Denken.",
-            url: amazonUrl,
-            cardExtra: `
-              <img src="${bookImageUrl}" alt="Fritz – Mein Roboterfreund Buchcover" class="w-full h-48 object-cover rounded-xl border mb-3">
-              <a class="inline-block px-4 py-2 rounded-xl bg-sky-500 text-white" href="${amazonUrl}" target="_blank" rel="noopener">Bei Amazon ansehen</a>
-            `
-          }
-        ]
-      }
-    };
-
     const els = {
-      title: document.getElementById("title"),
+      pageTitle: document.getElementById("pageTitle"),
       brand: document.getElementById("brand"),
       navProjects: document.getElementById("navProjects"),
       navSkills: document.getElementById("navSkills"),
+      tagline: document.getElementById("tagline"),
       projectsTitle: document.getElementById("projectsTitle"),
       skillsTitle: document.getElementById("skillsTitle"),
-      sk1: document.getElementById("sk1"),
-      sk2: document.getElementById("sk2"),
       projectsGrid: document.getElementById("projectsGrid"),
-      lang: document.getElementById("lang"),
+      skillArduino: document.getElementById("skillArduino"),
+      skillCV: document.getElementById("skillCV"),
       footerTxt: document.getElementById("footerTxt"),
+      lang: document.getElementById("lang"),
     };
 
-    function render(lang) {
-      const t = i18n[lang];
+    async function load(lang){
+      const data = await fetch(`${lang}.json?cachebust=${Date.now()}`).then(r=>r.json());
       document.documentElement.lang = lang;
-      els.title.textContent = (lang === "de")
-        ? "Ladan Works — Projekte & Fähigkeiten"
-        : "Ladan Works — Projects & Skills";
-      els.brand.textContent = t.brand;
-      els.navProjects.textContent = t.navProjects;
-      els.navSkills.textContent = t.navSkills;
-      els.projectsTitle.textContent = t.projectsTitle;
-      els.skillsTitle.textContent = t.skillsTitle;
-      els.sk1.textContent = t.sk1;
-      els.sk2.textContent = t.sk2;
-      els.footerTxt.textContent = t.footerTxt;
+      els.pageTitle.textContent = data.metaTitle;
+      els.brand.textContent = data.brand;
+      els.navProjects.textContent = data.nav.projects;
+      els.navSkills.textContent = data.nav.skills;
+      els.tagline.textContent = data.tagline;
+      els.projectsTitle.textContent = data.projectsTitle;
+      els.skillsTitle.textContent = data.skillsTitle;
+      els.skillArduino.textContent = data.skills.arduino;
+      els.skillCV.textContent = data.skills.cv;
+      els.footerTxt.textContent = data.footer;
 
-      els.projectsGrid.innerHTML = t.projects.map(p => `
-        <div class="p-6 rounded-2xl bg-white border flex flex-col">
-          ${p.cardExtra ? p.cardExtra : ""}
+      els.projectsGrid.innerHTML = data.projects.map(p => `
+        <article class="p-6 rounded-2xl bg-white border shadow-sm hover:shadow-md transition flex flex-col">
+          ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-44 object-cover rounded-xl border mb-4">` : ``}
           <h3 class="font-semibold mb-1">${p.title}</h3>
           <p class="opacity-80 text-sm mb-4">${p.desc}</p>
-          <a class="mt-auto inline-block px-4 py-2 rounded-xl bg-sky-500 text-white" href="${p.url}" target="${p.url.startsWith('http') ? '_blank' : '_self'}">${(lang==='de'?'Öffnen':'Open')}</a>
-        </div>
+          <a class="mt-auto inline-block px-4 py-2 rounded-xl bg-[var(--brand)] text-white text-sm" href="${p.url}" target="${p.url.startsWith('http') ? '_blank' : '_self'}">
+            ${p.cta || (lang==='de'?'Öffnen':'Open')}
+          </a>
+        </article>
       `).join("");
     }
 
     const saved = localStorage.getItem("lang") || "en";
     els.lang.value = saved;
-    render(saved);
-    els.lang.addEventListener("change", (e) => {
+    load(saved);
+    els.lang.addEventListener("change", e => {
       localStorage.setItem("lang", e.target.value);
-      render(e.target.value);
+      load(e.target.value);
     });
   </script>
 </body>
 </html>
+
 
