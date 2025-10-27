@@ -8,11 +8,42 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
   :root {
-    --brand: #16a34a;       /* سبز اصلی (medium green) */
-    --grad-a: #14532d;      /* سبز تیره (شروع گرادیان) */
-    --grad-b: #22c55e;      /* سبز روشن (پایان گرادیان) */
-    --ring: rgba(34,197,94,.35); /* رنگ هایلایت ملایم */
+    --brand: #16a34a;       /* main green (medium) */
+    --grad-a: #064e3b;      /* darker green for header background */
+    --grad-b: #22c55e;      /* bright green highlight */
+    --ring: rgba(34,197,94,.35);
   }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #f9fafb; /* very light gray */
+    color: #111827;
+  }
+
+  /* Hero gradient (stronger and less transparent) */
+  section#top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--grad-a) 0%, var(--grad-b) 100%);
+    opacity: 0.45; /* stronger than before */
+  }
+
+  .glass {
+    backdrop-filter: saturate(140%) blur(10px);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all .5s;
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+
   html { scroll-behavior: smooth; }
   .glass { backdrop-filter: saturate(140%) blur(10px); }
   .reveal { opacity: 0; transform: translateY(12px); transition: all .5s; }
