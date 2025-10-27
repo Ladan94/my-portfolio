@@ -1,0 +1,27 @@
+{
+  "metaTitle": "Ladan Works — Projekte & Fähigkeiten",
+  "brand": "Ladan Works",
+  "nav": { "projects": "Projekte", "skills": "Fähigkeiten" },
+  "tagline": "Ingenieurwesen, KI & praktische Tools.",
+  "projectsTitle": "Ausgewählte Projekte",
+  "skillsTitle": "Kernkompetenzen",
+  "skills": {
+    "arduino": "Schnelles Prototyping mit Arduino/ESP, Sensoren, OLEDs, LDR/IR, serieller I/O, robuste Hardware-Tests.",
+    "cv": "Echtzeit-Erkennung, Objektverfolgung, Sicherheitswarnungen; Python-Pipelines (YOLOv8, MediaPipe) und On-Device-Optimierung."
+  },
+  "projects": [
+    {
+      "title": "SmartBike KI",
+      "desc": "Idee: ein intelligenter Fahrradhelm mit integrierter KI, der in Echtzeit auf Gefahren reagiert und akustische Warnungen ausgibt. Kamera + kompakter Prozessor (z. B. Nano-PC oder Jetson Nano) mit moderner CV (YOLOv8, MediaPipe) zur Erkennung von Fahrzeugen, Motorrädern und Hindernissen; Warnungen je nach Position und Geschwindigkeit. Für Radfahrende, Motorradfahrende, Rollstuhlnutzende und Menschen mit eingeschränkter Mobilität.",
+      "url": "#"
+    },
+    {
+      "title": "Fritz – Mein Roboterfreund",
+      "desc": "Kinderbuch von Ladan Seddighi über Freundschaft, Neugier und Robotik – mit spielerischen Illustrationen.",
+      "url": "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746",
+      "image": "book.jpg",
+      "cta": "Bei Amazon ansehen"
+    }
+  ],
+  "footer": "© 2025 Ladan — Alle Rechte vorbehalten."
+}
