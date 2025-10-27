@@ -5,111 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title id="pageTitle">Ladan Works — Projects & Skills</title>
   <meta name="description" content="SmartBike AI and the book ‘Fritz – Mein Roboterfreund’. Arduino & Computer Vision." />
+  <meta property="og:title" content="Ladan Works — Projects & Skills">
+  <meta property="og:description" content="SmartBike AI • Fritz – Mein Roboterfreund • Arduino • Computer Vision">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2316a34a'/%3E%3Ctext x='50' y='58' font-size='44' text-anchor='middle' fill='white' font-family='Arial'%3EL%3C/text%3E%3C/svg%3E">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-  :root {
-    --brand: #16a34a;       /* main green (medium) */
-    --grad-a: #064e3b;      /* darker green for header background */
-    --grad-b: #22c55e;      /* bright green highlight */
-    --ring: rgba(34,197,94,.35);
-  }
+    :root {
+      --brand: #16a34a;       /* main green */
+      --grad-a: #064e3b;      /* dark green */
+      --grad-b: #22c55e;      /* light green */
+      --ring: rgba(34,197,94,.35);
+    }
 
-  html { scroll-behavior: smooth; }
-  body {
-    background-color: #f9fafb; /* very light gray */
-    color: #111827;
-  }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #f9fafb; /* light gray */
+      color: #111827;
+    }
 
-  /* Hero gradient (stronger and less transparent) */
-  section#top::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(135deg, var(--grad-a) 0%, var(--grad-b) 100%);
-    opacity: 0.45; /* stronger than before */
-  }
+    header {
+      background: rgba(6,78,59,0.9); /* dark green glass navbar */
+      color: white;
+      backdrop-filter: saturate(140%) blur(10px);
+    }
 
-  .glass {
-    backdrop-filter: saturate(140%) blur(10px);
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: all .5s;
-  }
-  .reveal.show {
-    opacity: 1;
-    transform: none;
-  }
-</style>
+    section#top {
+      background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+      color: white;
+    }
 
-  html { scroll-behavior: smooth; }
-  .glass { backdrop-filter: saturate(140%) blur(10px); }
-  .reveal { opacity: 0; transform: translateY(12px); transition: all .5s; }
-  .reveal.show { opacity: 1; transform: none; }
-</style>
-<style>
-  :root {
-    --brand: #16a34a;       /* main green */
-    --grad-a: #14532d;      /* dark green - gradient start */
-    --grad-b: #22c55e;      /* light green - gradient end */
-    --ring: rgba(34,197,94,.35); /* subtle highlight */
-  }
-  html { scroll-behavior: smooth; }
-  .glass { backdrop-filter: saturate(140%) blur(10px); }
-  .reveal { opacity: 0; transform: translateY(12px); transition: all .5s; }
-  .reveal.show { opacity: 1; transform: none; }
-</style>
+    a, button, select {
+      color: inherit;
+    }
 
+    .glass { backdrop-filter: saturate(140%) blur(10px); }
+    .reveal { opacity: 0; transform: translateY(12px); transition: all .5s; }
+    .reveal.show { opacity: 1; transform: none; }
+  </style>
 </head>
-<body class="text-slate-900 bg-slate-50">
-  <!-- Gradient header -->
-  <div class="bg-gradient-to-r from-[var(--bg1)] to-[var(--bg2)] text-white">
-    <div class="max-w-6xl mx-auto px-4 py-10">
-      <div class="flex items-center justify-between">
-        <h1 id="brand" class="text-2xl md:text-3xl font-extrabold">Ladan Works</h1>
-        <div class="flex items-center gap-3">
-          <a href="#projects" class="opacity-90 hover:opacity-100" id="navProjects">Projects</a>
-          <a href="#skills" class="opacity-90 hover:opacity-100" id="navSkills">Skills</a>
-          <select id="lang" class="px-3 py-2 rounded-xl text-slate-900">
-            <option value="en" selected>EN</option>
-            <option value="de">DE</option>
-          </select>
+
+<body class="antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 border-b border-white/20">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="text-xl font-extrabold tracking-tight" id="brand">Ladan Works</a>
+      <div class="flex items-center gap-2">
+        <a href="#projects" class="px-3 py-2 rounded-xl hover:bg-white/10" id="navProjects">Projects</a>
+        <a href="#skills" class="px-3 py-2 rounded-xl hover:bg-white/10" id="navSkills">Skills</a>
+        <select id="lang" class="px-3 py-2 rounded-xl bg-transparent border border-white/30 text-white">
+          <option value="en" selected>EN</option>
+          <option value="de">DE</option>
+        </select>
+        <button id="themeBtn" aria-label="Toggle theme" class="px-3 py-2 rounded-xl border border-white/30">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative">
+    <div class="max-w-6xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h1 class="text-4xl md:text-5xl font-black leading-tight">
+          Engineering, AI & <span class="bg-clip-text text-transparent bg-gradient-to-r from-[var(--grad-b)] to-[var(--brand)]">practical tools</span>.
+        </h1>
+        <p id="tagline" class="mt-4 text-lg opacity-90">SmartBike AI & “Fritz – Mein Roboterfreund”.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="#projects" class="px-6 py-3 rounded-2xl text-white bg-[var(--brand)] shadow hover:shadow-md">Explore Projects</a>
+          <a href="https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746" target="_blank" class="px-6 py-3 rounded-2xl border border-white text-white hover:bg-white/10">Book on Amazon</a>
         </div>
       </div>
-      <p id="tagline" class="mt-4 opacity-90">Engineering, AI & practical tools.</p>
+      <div class="reveal">
+        <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white/30">
+          <img src="book.jpg" alt="Fritz – Mein Roboterfreund cover" class="w-full h-[320px] object-cover">
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <!-- MAIN -->
   <main class="max-w-6xl mx-auto px-4">
-    <!-- Projects -->
+
+    <!-- PROJECTS -->
     <section id="projects" class="py-12">
-      <h2 id="projectsTitle" class="text-3xl font-bold mb-6">Featured Projects</h2>
+      <h2 class="text-3xl font-bold mb-6 reveal" id="projectsTitle">Featured Projects</h2>
       <div id="projectsGrid" class="grid md:grid-cols-2 gap-6"></div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section id="skills" class="py-12">
-      <h2 id="skillsTitle" class="text-3xl font-bold mb-6">Core Skills</h2>
+      <h2 class="text-3xl font-bold mb-6 reveal" id="skillsTitle">Core Skills</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl bg-white border shadow-sm">
-          <h3 class="font-semibold mb-2">Arduino / Embedded</h3>
-          <p id="skillArduino" class="opacity-80 text-sm"></p>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal">
+          <div class="text-sm uppercase tracking-wide opacity-60 mb-1">Arduino / Embedded</div>
+          <p id="skillArduino" class="opacity-90">Rapid prototyping with Arduino/ESP, sensors, OLEDs, serial I/O.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Arduino</span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">ESP32</span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Sensors</span>
+          </div>
         </div>
-        <div class="p-6 rounded-2xl bg-white border shadow-sm">
-          <h3 class="font-semibold mb-2">Computer Vision</h3>
-          <p id="skillCV" class="opacity-80 text-sm"></p>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal">
+          <div class="text-sm uppercase tracking-wide opacity-60 mb-1">Computer Vision</div>
+          <p id="skillCV" class="opacity-90">Real-time detection, tracking, and safety alerts using YOLOv8 and MediaPipe.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">YOLOv8</span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">MediaPipe</span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Python</span>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 text-center opacity-70 border-t">
+  <!-- FOOTER -->
+  <footer class="py-10 text-center opacity-70 border-t border-slate-200">
     <p id="footerTxt">© 2025 Ladan — All rights reserved.</p>
   </footer>
 
   <script>
+    // Theme toggle
+    const themeBtn = document.getElementById("themeBtn");
+    const setTheme = (m) => {
+      document.documentElement.classList.toggle("dark", m === "dark");
+      localStorage.setItem("theme", m);
+    };
+    setTheme(localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    themeBtn.onclick = () =>
+      setTheme(document.documentElement.classList.contains("dark") ? "light" : "dark");
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(
+      (es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Dynamic content loader
     const els = {
       pageTitle: document.getElementById("pageTitle"),
       brand: document.getElementById("brand"),
@@ -122,44 +155,71 @@
       skillArduino: document.getElementById("skillArduino"),
       skillCV: document.getElementById("skillCV"),
       footerTxt: document.getElementById("footerTxt"),
-      lang: document.getElementById("lang"),
+      lang: document.getElementById("lang")
     };
 
-    async function load(lang){
-      const data = await fetch(`${lang}.json?cachebust=${Date.now()}`).then(r=>r.json());
-      document.documentElement.lang = lang;
-      els.pageTitle.textContent = data.metaTitle;
-      els.brand.textContent = data.brand;
-      els.navProjects.textContent = data.nav.projects;
-      els.navSkills.textContent = data.nav.skills;
-      els.tagline.textContent = data.tagline;
-      els.projectsTitle.textContent = data.projectsTitle;
-      els.skillsTitle.textContent = data.skillsTitle;
-      els.skillArduino.textContent = data.skills.arduino;
-      els.skillCV.textContent = data.skills.cv;
-      els.footerTxt.textContent = data.footer;
+    const fallback = {
+      en: {
+        projects: [
+          {
+            title: "SmartBike AI",
+            desc:
+              "An intelligent helmet with integrated AI reacting to hazards in real time. Uses YOLOv8 & MediaPipe.",
+            url: "#",
+            image: "",
+          },
+          {
+            title: "Fritz – My Robot Friend",
+            desc:
+              "Children’s book by Ladan Seddighi about friendship, curiosity and robotics.",
+            url: "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746",
+            image: "book.jpg",
+          },
+        ],
+      },
+      de: {
+        projects: [
+          {
+            title: "SmartBike KI",
+            desc:
+              "Intelligenter Fahrradhelm mit integrierter KI; erkennt Gefahren in Echtzeit (YOLOv8/MediaPipe).",
+            url: "#",
+            image: "",
+          },
+          {
+            title: "Fritz – Mein Roboterfreund",
+            desc:
+              "Kinderbuch von Ladan Seddighi über Freundschaft, Neugier und Robotik.",
+            url: "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746",
+            image: "book.jpg",
+          },
+        ],
+      },
+    };
 
-      els.projectsGrid.innerHTML = data.projects.map(p => `
-        <article class="p-6 rounded-2xl bg-white border shadow-sm hover:shadow-md transition flex flex-col">
-          ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-44 object-cover rounded-xl border mb-4">` : ``}
-          <h3 class="font-semibold mb-1">${p.title}</h3>
-          <p class="opacity-80 text-sm mb-4">${p.desc}</p>
-          <a class="mt-auto inline-block px-4 py-2 rounded-xl bg-[var(--brand)] text-white text-sm" href="${p.url}" target="${p.url.startsWith('http') ? '_blank' : '_self'}">
-            ${p.cta || (lang==='de'?'Öffnen':'Open')}
-          </a>
-        </article>
-      `).join("");
+    async function load(lang) {
+      let data = fallback[lang];
+      els.projectsGrid.innerHTML = data.projects
+        .map(
+          (p) => `
+          <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition reveal">
+            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-44 object-cover rounded-xl border mb-4">` : ""}
+            <h3 class="font-semibold mb-1">${p.title}</h3>
+            <p class="opacity-80 text-sm mb-4">${p.desc}</p>
+            <a class="mt-auto inline-block px-4 py-2 rounded-xl bg-[var(--brand)] text-white text-sm" href="${p.url}" target="_blank">Open</a>
+          </article>`
+        )
+        .join("");
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     }
 
     const saved = localStorage.getItem("lang") || "en";
     els.lang.value = saved;
     load(saved);
-    els.lang.addEventListener("change", e => {
+    els.lang.addEventListener("change", (e) => {
       localStorage.setItem("lang", e.target.value);
       load(e.target.value);
     });
   </script>
 </body>
 </html>
-
-
