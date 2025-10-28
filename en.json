@@ -8,13 +8,13 @@
   "skills": {
     "arduino": "Rapid prototyping with Arduino/ESP, sensors, OLEDs, LDR/IR, serial I/O, robust hardware testing.",
     "cv": "Real-time detection, object tracking, safety alerts; Python pipelines (YOLOv8, MediaPipe) and on-device optimization."
-  },
-  "projects": [
-    {
-      "title": "SmartBike AI",
-      "desc": "Intelligent helmet concept with integrated AI that reacts to hazards in real time and issues audio warnings. Camera + compact processor (Nano-PC or Jetson Nano) with modern CV (YOLOv8, MediaPipe) to detect vehicles, motorcycles, and obstacles; warnings by position and speed. For cyclists, motorcyclists, wheelchair users, and people with reduced mobility.",
-      "url": "#"
-    },
+ {
+  "title": "SmartBike AI",
+  "desc": "Intelligent helmet with on-device AI that detects vehicles and obstacles in real time (YOLOv8, MediaPipe) and plays directional audio warnings. Designed for cyclists, motorcyclists, wheelchair users and people with limited mobility. Camera + nano PC/Jetson.",
+  "url": "#",
+  "icons": ["camera", "warning", "jetson"]
+}
+
     {
       "title": "Fritz – My Robot Friend",
       "desc": "Children’s book by Ladan Seddighi about friendship, curiosity and robotics with playful illustrations.",
