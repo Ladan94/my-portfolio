@@ -4,13 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title id="pageTitle">Ladan Works — Projects & Skills</title>
-  <meta name="description" content="SmartBike AI and the book ‘Fritz – Mein Roboterfreund’. Arduino & Computer Vision." />
+
+  <!-- Meta -->
+  <meta name="description" content="Ladan Seddighi — AI projects, Arduino builds & creative tech. MA candidate in English Literature (University of Bonn) and author of 'Fritz – My Robot Friend'." />
   <meta property="og:title" content="Ladan Works — Projects & Skills">
-  <meta property="og:description" content="SmartBike AI • Fritz – Mein Roboterfreund • Arduino • Computer Vision">
+  <meta property="og:description" content="AI • Arduino • Creative Tech — SmartBike AI & a kids’ robotics book by Ladan Seddighi">
   <meta property="og:type" content="website">
+
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2316a34a'/%3E%3Ctext x='50' y='58' font-size='44' text-anchor='middle' fill='white' font-family='Arial'%3EL%3C/text%3E%3C/svg%3E">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+  </style>
+
+  <!-- Theme / Look -->
   <style>
     :root {
       --brand: #16a34a;       /* main green */
@@ -20,13 +36,10 @@
     }
 
     html { scroll-behavior: smooth; }
-    body {
-      background-color: #f9fafb; /* light gray */
-      color: #111827;
-    }
+    body { background-color: #f9fafb; color: #111827; }
 
     header {
-      background: rgba(6,78,59,0.9); /* dark green glass navbar */
+      background: rgba(6,78,59,0.9);
       color: white;
       backdrop-filter: saturate(140%) blur(10px);
     }
@@ -36,14 +49,10 @@
       color: white;
     }
 
-    a, button, select {
-      color: inherit;
-    }
-
-    .glass { backdrop-filter: saturate(140%) blur(10px); }
     .reveal { opacity: 0; transform: translateY(12px); transition: all .5s; }
     .reveal.show { opacity: 1; transform: none; }
   </style>
+
 </head>
 
 <body class="antialiased">
@@ -52,35 +61,58 @@
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#top" class="text-xl font-extrabold tracking-tight" id="brand">Ladan Works</a>
       <div class="flex items-center gap-2">
+        <a href="#about" class="px-3 py-2 rounded-xl hover:bg-white/10" id="navAbout">About</a>
         <a href="#projects" class="px-3 py-2 rounded-xl hover:bg-white/10" id="navProjects">Projects</a>
         <a href="#skills" class="px-3 py-2 rounded-xl hover:bg-white/10" id="navSkills">Skills</a>
+
         <select id="lang" class="px-3 py-2 rounded-xl bg-transparent border border-white/30 text-white">
           <option value="en" selected>EN</option>
           <option value="de">DE</option>
         </select>
-        <button id="themeBtn" aria-label="Toggle theme" class="px-3 py-2 rounded-xl border border-white/30">🌓</button>
+
+        <button id="themeBtn" aria-label="Toggle theme" class="px-3 py-2 rounded-2xl border border-white/30">
+          🌓
+        </button>
       </div>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="top" class="relative">
+  <section id="top">
     <div class="max-w-6xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal">
-        <h1 class="text-4xl md:text-5xl font-black leading-tight">
-          Engineering, AI & <span class="bg-clip-text text-transparent bg-gradient-to-r from-[var(--grad-b)] to-[var(--brand)]">practical tools</span>.
+        <!-- ✅ شخصی‌سازی‌شده -->
+        <h1 id="heroTitle" class="text-4xl md:text-5xl font-black leading-tight">
+          <!-- filled by JS -->
         </h1>
-        <p id="tagline" class="mt-4 text-lg opacity-90">SmartBike AI & “Fritz – Mein Roboterfreund”.</p>
+        <p id="tagline" class="mt-4 text-lg opacity-90"><!-- filled by JS --></p>
+
         <div class="mt-8 flex gap-3">
-          <a href="#projects" class="px-6 py-3 rounded-2xl text-white bg-[var(--brand)] shadow hover:shadow-md">Explore Projects</a>
-          <a href="https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746" target="_blank" class="px-6 py-3 rounded-2xl border border-white text-white hover:bg-white/10">Book on Amazon</a>
+          <a href="#projects" class="px-6 py-3 rounded-2xl text-white bg-[var(--brand)] shadow hover:shadow-md">
+            <span id="ctaExplore">Explore Projects</span>
+          </a>
+          <a href="https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746"
+             target="_blank"
+             class="px-6 py-3 rounded-2xl border border-white text-white hover:bg-white/10">
+            <span id="ctaBook">Book on Amazon</span>
+          </a>
         </div>
       </div>
+
       <div class="reveal">
         <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white/30">
-          <img src="book.jpg?v=2" alt="Fritz – Mein Roboterfreund cover" class="w-full h-[320px] object-cover rounded-3xl border border-white/30 shadow-xl">
+          <img src="book.jpg" alt="Fritz – Mein Roboterfreund cover"
+               class="w-full h-[320px] object-cover rounded-3xl border border-white/30 shadow-xl">
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 id="aboutTitle" class="text-3xl font-bold mb-4">About</h2>
+      <p id="aboutText" class="opacity-90 max-w-3xl"><!-- filled by JS --></p>
     </div>
   </section>
 
@@ -97,24 +129,33 @@
     <section id="skills" class="py-12">
       <h2 class="text-3xl font-bold mb-6 reveal" id="skillsTitle">Core Skills</h2>
       <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Arduino -->
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal">
           <div class="text-sm uppercase tracking-wide opacity-60 mb-1">Arduino / Embedded</div>
-          <p id="skillArduino" class="opacity-90">Rapid prototyping with Arduino/ESP, sensors, OLEDs, serial I/O.</p>
+          <p id="skillArduino" class="opacity-90">
+            Rapid prototyping with Arduino/ESP, sensors, OLEDs, serial I/O.
+          </p>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Arduino</span>
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">ESP32</span>
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Sensors</span>
           </div>
         </div>
+
+        <!-- CV -->
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal">
           <div class="text-sm uppercase tracking-wide opacity-60 mb-1">Computer Vision</div>
-          <p id="skillCV" class="opacity-90">Real-time detection, tracking, and safety alerts using YOLOv8 and MediaPipe.</p>
+          <p id="skillCV" class="opacity-90">
+            Real-time detection, tracking, and safety alerts using YOLOv8 and MediaPipe.
+          </p>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">YOLOv8</span>
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">MediaPipe</span>
             <span class="px-3 py-1 rounded-full bg-slate-100 text-sm">Python</span>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -124,78 +165,99 @@
     <p id="footerTxt">© 2025 Ladan — All rights reserved.</p>
   </footer>
 
+
+  <!-- SCRIPT -->
   <script>
-    // Theme toggle
+    /* THEME */
     const themeBtn = document.getElementById("themeBtn");
     const setTheme = (m) => {
       document.documentElement.classList.toggle("dark", m === "dark");
       localStorage.setItem("theme", m);
     };
-    setTheme(localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    setTheme(localStorage.getItem("theme")
+      || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
     themeBtn.onclick = () =>
       setTheme(document.documentElement.classList.contains("dark") ? "light" : "dark");
 
-    // Reveal on scroll
+    /* REVEAL */
     const io = new IntersectionObserver(
       (es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
       { threshold: 0.15 }
     );
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-    // --- Icon dictionary (inline SVGs) ---
+    /* ICONS */
     const ICONS = {
       camera: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l2-3h8l2 3h3a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
       warning:`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
       jetson:`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M3 10h5M3 14h5M16 3v5M20 10h1M20 14h1M8 20v1M16 20v1"/></svg>`
     };
 
-    // Dynamic content loader
+    /* ELEMENTS */
     const els = {
-      pageTitle: document.getElementById("pageTitle"),
       brand: document.getElementById("brand"),
+      navAbout: document.getElementById("navAbout"),
       navProjects: document.getElementById("navProjects"),
       navSkills: document.getElementById("navSkills"),
+      heroTitle: document.getElementById("heroTitle"),
       tagline: document.getElementById("tagline"),
-      projectsTitle: document.getElementById("projectsTitle"),
-      skillsTitle: document.getElementById("skillsTitle"),
+      ctaExplore: document.getElementById("ctaExplore"),
+      ctaBook: document.getElementById("ctaBook"),
+      aboutTitle: document.getElementById("aboutTitle"),
+      aboutText: document.getElementById("aboutText"),
       projectsGrid: document.getElementById("projectsGrid"),
-      skillArduino: document.getElementById("skillArduino"),
-      skillCV: document.getElementById("skillCV"),
-      footerTxt: document.getElementById("footerTxt"),
-      lang: document.getElementById("lang")
+      lang: document.getElementById("lang"),
     };
 
-    // Fallback data (EN/DE) with icons
-    const fallback = {
+    /* TEXTS (EN/DE) */
+    const texts = {
       en: {
+        brand: "Ladan Works",
+        navAbout: "About",
+        navProjects: "Projects",
+        navSkills: "Skills",
+        heroTitle: `Ladan Seddighi — <span class="bg-clip-text text-transparent bg-gradient-to-r from-[var(--grad-b)] to-[var(--brand)]">AI, Arduino & creative tech</span>`,
+        tagline: "MA candidate in English Literature (University of Bonn). Author of “Fritz – My Robot Friend”. I build safety-first AI (SmartBike) and playful STEM content.",
+        ctaExplore: "Explore Projects",
+        ctaBook: "Book on Amazon",
+        aboutTitle: "About",
+        aboutText: "I enjoy combining research and engineering. I prototype with Arduino/ESP and build real-time computer-vision systems. Alongside engineering, I write for kids to make STEM friendly.",
         projects: [
           {
             title: "SmartBike AI",
-            desc: "Intelligent helmet with on-device AI that detects vehicles and obstacles in real time (YOLOv8, MediaPipe) and plays directional audio warnings. For cyclists, motorcyclists, wheelchair users and people with limited mobility. Camera + nano PC/Jetson.",
+            desc: "AI helmet detecting vehicles & hazards via YOLOv8/MediaPipe, with directional audio alerts. For cyclists, motorcyclists & mobility-limited users.",
             url: "#",
-            image: "",
             icons: ["camera","warning","jetson"]
           },
           {
             title: "Fritz – My Robot Friend",
-            desc: "Children’s book by Ladan Seddighi about friendship, curiosity and robotics.",
+            desc: "Children’s book about friendship, curiosity & robotics.",
             url: "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746",
             image: "book.jpg"
           }
         ]
       },
       de: {
+        brand: "Ladan Works",
+        navAbout: "Über mich",
+        navProjects: "Projekte",
+        navSkills: "Fähigkeiten",
+        heroTitle: `Ladan Seddighi — <span class="bg-clip-text text-transparent bg-gradient-to-r from-[var(--grad-b)] to-[var(--brand)]">KI, Arduino & kreative Tech</span>`,
+        tagline: "MA-Studentin der Anglistik (Universität Bonn). Autorin von „Fritz – Mein Roboterfreund“. Ich entwickle sicherheitsorientierte KI (SmartBike) und spielerische MINT-Inhalte.",
+        ctaExplore: "Projekte ansehen",
+        ctaBook: "Bei Amazon ansehen",
+        aboutTitle: "Über mich",
+        aboutText: "Ich verbinde Forschung und Engineering: Prototyping mit Arduino/ESP und Echtzeit-Computer-Vision. Parallel schreibe ich für Kinder, um MINT zugänglicher zu machen.",
         projects: [
           {
             title: "SmartBike KI",
-            desc: "Intelligenter Helm mit On-Device-KI: erkennt Fahrzeuge/Hindernisse in Echtzeit (YOLOv8, MediaPipe) und gibt gerichtete Audio-Warnungen aus. Für Rad-/Motorradfahrende, Rollstuhlnutzende und Menschen mit eingeschränkter Mobilität. Kamera + Nano-PC/Jetson.",
+            desc: "KI-Helm erkennt Gefahren (YOLOv8/MediaPipe) in Echtzeit und gibt gerichtete Audio-Warnungen. Für Rad-/Motorradfahrende & Personen mit eingeschränkter Mobilität.",
             url: "#",
-            image: "",
             icons: ["camera","warning","jetson"]
           },
           {
             title: "Fritz – Mein Roboterfreund",
-            desc: "Kinderbuch von Ladan Seddighi über Freundschaft, Neugier und Robotik.",
+            desc: "Kinderbuch über Freundschaft, Neugier & Robotik.",
             url: "https://www.amazon.de/Fritz-Mein-Roboterfreund-Ladan-Seddighi/dp/3819246746",
             image: "book.jpg"
           }
@@ -203,11 +265,29 @@
       }
     };
 
-    async function load(lang) {
-      let data = fallback[lang];
-      els.projectsGrid.innerHTML = data.projects.map(p => `
+    /* RENDER */
+    function render(lang){
+      const t = texts[lang];
+
+      document.documentElement.lang = lang;
+      els.brand.textContent = t.brand;
+      els.navAbout.textContent = t.navAbout;
+      els.navProjects.textContent = t.navProjects;
+      els.navSkills.textContent = t.navSkills;
+
+      els.heroTitle.innerHTML = t.heroTitle;
+      els.tagline.textContent = t.tagline;
+      els.ctaExplore.textContent = t.ctaExplore;
+      els.ctaBook.textContent = t.ctaBook;
+
+      els.aboutTitle.textContent = t.aboutTitle;
+      els.aboutText.textContent = t.aboutText;
+
+      els.projectsGrid.innerHTML = t.projects.map(p => `
         <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:-translate-y-0.5 hover:shadow-md transition reveal">
-          ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-44 object-cover rounded-xl border mb-4" loading="lazy">` : ""}
+          ${p.image ? `
+            <img src="${p.image}" alt="${p.title}" class="w-full h-44 object-cover rounded-xl border mb-4" loading="lazy">
+          ` : ""}
 
           <div class="flex items-center gap-2 mb-3">
             ${p.icons ? p.icons.map(k => `
@@ -220,25 +300,30 @@
 
           <h3 class="font-semibold mb-1">${p.title}</h3>
           <p class="opacity-80 text-sm mb-4">${p.desc}</p>
-          <a class="mt-auto inline-block px-4 py-2 rounded-xl bg-[var(--brand)] text-white text-sm" href="${p.url}" target="${p.url && p.url.startsWith('http') ? '_blank' : '_self'}">
-            ${(document.documentElement.lang === 'de') ? 'Öffnen' : 'Open'}
+
+          <a class="mt-auto inline-block px-4 py-2 rounded-2xl bg-[var(--brand)] text-white text-sm"
+             href="${p.url}" target="${p.url && p.url.startsWith('http') ? '_blank' : '_self'}">
+            ${lang === "de" ? "Öffnen" : "Open"}
           </a>
         </article>
       `).join("");
 
+      // animation hook for new cards
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     }
 
+    // Init
     const saved = localStorage.getItem("lang") || "en";
-    els.lang.value = saved;
-    load(saved);
-    els.lang.addEventListener("change", (e) => {
+    document.getElementById("lang").value = saved;
+    render(saved);
+
+    // Switch
+    document.getElementById("lang").addEventListener("change", e => {
       localStorage.setItem("lang", e.target.value);
-      // فقط متن کارت‌ها دو زبانه می‌شود؛ عنوان‌ها ثابت‌اند
-      load(e.target.value);
-      document.documentElement.lang = e.target.value;
+      render(e.target.value);
     });
   </script>
+
 </body>
 </html>
 
